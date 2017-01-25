@@ -1,0 +1,51 @@
+﻿<html ng-app="registrationModule">
+<head>
+    <title>College registration</title>
+    <base href="/" />
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="https://code.angularjs.org/1.5.7/angular-route.js"></script>
+
+    <script src="Scripts/registration-module.js"></script>
+
+    <script src="Scripts/Courses/courses-controller.js"></script>
+    <script src="Scripts/Instructors/instructors-controller.js"></script>
+    <script src="Scripts/Courses/course-repository.js"></script>
+    <script src="Scripts/Instructors/instructor-repository.js"></script>
+    <script src="Scripts/Accounts/account-controller.js"></script>
+    <script src="Scripts/Accounts/account-repository.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li><span class="navbar-brand">Registration</span></li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Registration/Courses">Catalog</a></li>
+                        <li><a href="/Registration/Instructors">Instructors</a></li>
+                    </ul>
+                    <ul class="nav navbar navbar-right">
+                        <li><a href="/Registration/CreateAccount">Create Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div ng-view></div>
+    </div>
+</body>
+</html>
