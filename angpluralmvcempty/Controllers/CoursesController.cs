@@ -11,7 +11,6 @@ namespace angpluralmvcempty.Controllers
 
         public CourseVm[] Get()
         {
-            //System.Threading.Thread.Sleep(5000);
             return _regVmBuilder.GetCoursesVm();
         }
     }

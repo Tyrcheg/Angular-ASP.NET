@@ -1,15 +1,24 @@
-﻿using System.Net;
-using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace angpluralmvcempty.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : ApiController
     {
-        [HttpPost]
-        public ActionResult Save(StudentVm student)
+        public HttpResponseMessage Post(HttpRequestMessage request, StudentVm student)
         {
-            // _studentRegistrationService.Register(student);
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            if (ModelState.IsValid)
+                return new HttpResponseMessage(HttpStatusCode.OK);
+
+            return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+        }
+
+        private IEnumerable<string> GetErrorMessages()
+        {
+            return ModelState.Values.SelectMany(x => x.Errors.Select(y => y.ErrorMessage));
         }
     }
 }
